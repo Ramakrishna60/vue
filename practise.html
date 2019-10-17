@@ -1,0 +1,32 @@
+<html>
+    <head>
+            <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
+    <body>
+            <div class="mx-auto" style="width: 400px;">
+                    Centered element
+                  </div>
+        <div id="vue">
+    
+        <p>
+            {{age}}
+        </p>
+        <button @click.once="add(1)">add</button>
+        <button @click="subtract(1)">subtract</button>
+        <button @dbclick="add(10)">add 10</button>
+        <button @dbclick="subtract(10)">subtract 10</button>
+        <a  v-on:click.capture="click" href ="https://www.Google.com">google</a>
+       Name:<input type ="text" v-on:keyup.enter="name"/>
+      DataBinding Model:<input v-model="name">
+       <p>{{name}}</p>
+       <button v-on:click="a++">Add To A</button>
+       
+       <p>A -{{a}}</p>
+       <p>age + A= {{addtoa}}</p>
+<p>B -{{b}}</p>
+       <p>age + B= {{addtob}}</p>
+        </div>
+        <script src="app.js"></script>
+    </body>
+    </html>
