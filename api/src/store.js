@@ -16,7 +16,7 @@ export default new Vuex.Store({
         }
     },
     state:{
-        question:[],
+        question:[]
     },
     getters:{
       question:state => state.question,

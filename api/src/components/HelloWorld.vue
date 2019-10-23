@@ -127,6 +127,9 @@
 </template>
 
 <script>
+
+import { mapGetters } from 'vuex'
+import { mapActions } from 'vuex'
 import store from '../store'
 import { log } from 'util';
 export default {
@@ -151,11 +154,17 @@ export default {
     }
   },
    computed : {
-    question() {
-      return this.$store.getters.question;
-    }
+    // question() {
+    //   return this.$store.getters.question;
+    // },
+     ...mapGetters([
+       'question'
+        ]),
   },
 methods: {
+    ...mapActions([
+        'addNewProductAction'
+    ]),
 	     add(quest) {
         //  this.store.dispatch("addNewProductAction",{ category : item });
         //  console.log(this.$store);
@@ -179,7 +188,7 @@ methods: {
 
 		},
 		update(question){
-			console.log(this.question[0].category);
+		 	console.log(this.question[0].category);
 			
 		}
 		
@@ -191,12 +200,11 @@ methods: {
 		fetch('https://opentdb.com/api.php?amount=5')
 			.then(response => { return response.json() }).then(data => {
         console.log(data);
-        store.dispatch("addNewProductAction", data.results );
+        this.addNewProductAction(data.results)
+        // store.dispatch("addNewProductAction", data.results );
         
-        // this.question = data.results;
+        //this.question = data.results;
         // console.log(question);
-        
-
 
 			})
 	}
