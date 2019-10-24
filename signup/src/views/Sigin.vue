@@ -1,5 +1,4 @@
 <template>
-    <!-- <img src="../assets/img.jpeg" alt="raja"> -->
    <div>
     <form>
  <p v-if="errors.length">
@@ -9,10 +8,6 @@
     </ul>
   </p>
 <div class="container">
-  
-<!-- <div class="row"> -->
-  <!-- <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-md-8 col-md-offset-2"> -->
-<!-- <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2"> -->
 <br>
 <center>
   <a href="https://icons8.com/icon/23293/registration"></a>
@@ -25,7 +20,7 @@
 							<div class="cols-lg-12">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-								<b>Your Name:</b><input type="text" class="form-control"   v-model="userData.name" name="name" id="name" placeholder=" your Name" required>
+							<pre><b>Your Name:     </b></pre><input type="text" class="form-control"   v-model="userData.name" name="name" id="name" placeholder=" your Name" required>
 								</div>
 							</div>
 						</div>
@@ -35,7 +30,7 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-							<b>Your Email:</b>	<input type="text" class="form-control"  v-model="userData.email" name="email" id="email"  placeholder=" your Email"  required/>
+						<pre><b>Your Email:   </b></pre>	<input type="text" class="form-control"  v-model="userData.email" name="email" id="email"  placeholder=" your Email"  required/>
 								</div>
 							</div>
 						</div>
@@ -45,7 +40,7 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-								<b>Password:</b><input type="password" class="form-control"   v-model="userData.password" name="password" id="password"  placeholder=" your Password"  required/>
+						<pre><b>Password:     </b></pre><input type="password" class="form-control"   v-model="userData.password" name="password" id="password"  placeholder=" your Password"  required/>
 								</div>
 							</div>
 						</div>
@@ -54,14 +49,14 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-								<b>Re-Password:</b><input type="password" class="form-control"   v-model="userData.passwordagain" name="passwordagain" id="passwordagain"  placeholder="password again"  required/>
+							<pre><b>Re-Password:</b></pre><input type="password" class="form-control"   v-model="userData.passwordagain" name="passwordagain" id="passwordagain"  placeholder="password again"  required/>
 								</div>
 							</div>
 						</div>
 
 						<div class="form-group ">
 							<input type="submit" class="btn btn-success btn-lg btn-block login-button" @click="persist"/>
-            Already have a account?<router-link to="/Login" input type="login" class="btn btn-info btn-lg btn-block login-button">Login</router-link>
+           <b> Already have a account?</b><router-link to="/Login" input type="login" class="btn btn-info btn-lg btn-block login-button">Login</router-link>
 						</div>
  </fieldset>
    </div>
@@ -141,62 +136,7 @@ methods: {
       
 
       
-      // this.errors = [];
-
-    //   if (!this.name) {
-    //   this.errors.push("Name required.");
-    //   }
-    //   if (!this.email) {
-    //    this.errors.push('Email required.');
-    //   } else if (!this.validEmail(this.email)) {
-    //    this.errors.push('Valid email required.');
-    //   }
-
-    //   if (!this.errors.length) {
-    //     return true;
-    //   }
-
-    //   e.preventDefault();
-
-    // validEmail: (email){
-    //   var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    //   return re.test(email);
-    
-    // }
-
-//  var errors =JSON.parse(localStorage.getItem('errors')) || [];
-// var dataStore =this.userData;
-// //  {name:this.userData.name,
-// // email:this.userData.email,
-// // password:this.userData.password}
-// // ;
-// errors.push(dataStore);
-// localStorage.setItem('errors', JSON.stringify(errors)); 
-// },
-    
-
-    // checkForm: function (e) {
-    //   // this.errors = [];
-
-    //   if (!this.name) {
-    //   this.errors.push("Name required.");
-    //   }
-    //   if (!this.email) {
-    //    this.errors.push('Email required.');
-    //   } else if (!this.validEmail(this.email)) {
-    //    this.errors.push('Valid email required.');
-    //   }
-
-    //   if (!this.errors.length) {
-    //     return true;
-    //   }
-
-    //   e.preventDefault();
-    // },
-    // validEmail: function (email) {
-    //   var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    //   return re.test(email);
-    // }
+     
   }
 }
 </script>
@@ -205,26 +145,24 @@ template, html {
   height: 10%;
   
 }
-/* form{
 
-} */
-
-/* * {
-  /* box-sizing: border-box; */
  
 #form-control {
 	border-radius: 0;
-  width:"50px";
+  width:"40px";
 	border: 1px solid #fff;
 }
 fieldset{
   padding: 0 40px 40px 40px;
 }
+i{
+  color: #ffae00;
+}
 form {
   /* The image used */
-  background:#1c1e21 url(https://static.pexels.com/photos/8819/warsaw.jpg);
-
-  min-height: 835px;
+  /* background:#1c1e21 url(https://static.pexels.com/photos/8819/warsaw.jpg); */
+background: url("../assets/sign.jpg");
+  height: 835px;
 
 
   /* Center and scale the image nicely */
@@ -246,10 +184,11 @@ br{
 
 /* Add styles to the form container */
 .container {
-  background-color: lavender;
+  /* background-color:green; */
+  background: url("../assets/form.jpg");
   position: absolute;
   right: 210px;
-  margin: 140px;
+  margin: 100px;
   max-width: 500px;
   border-radius: 10px;
   padding: 0;
@@ -259,7 +198,11 @@ br{
 /* form{background-image: url('../assets/img.jpeg'); */
 /* } */
 h2{
-  color:rgb(50, 47, 255);
+  color:rgb(255, 47, 99);
   
+}
+b{
+  color:rgb(0, 30, 128);
+  font-family: sans-serif;
 }
 </style>

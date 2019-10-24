@@ -1,7 +1,6 @@
   <template>
    <div class="bg-img">
-    <form
->
+   <form>
  <p v-if="errors.length">
     <b>Please correct the following error(s):</b>
     <ul>
@@ -9,10 +8,6 @@
     </ul>
   </p>
 <div class="container">
-<!-- <div class="row"> -->
-<!-- <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2"> -->
-
-
 <br>
 <fieldset>
                
@@ -26,40 +21,25 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-							<b>Your Name</b><input type="text" class="form-control"   v-model="userData.name" name="name" id="name"  placeholder=" your Name" required/>
+							<b>Your Name:</b><input type="text" class="form-control"   v-model="userData.name" name="name" id="name"  placeholder=" your Name" required/>
 								</div>
 							</div>
 						</div>
-
-						
-
-					
-
 						<div class="form-group">
 							<label for="password" class="cols-sm-2 control-label"></label>
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-								<b>Password</b>	<input type="password" class="form-control"   v-model="userData.password" name="password" id="password"  placeholder=" your Password" required/>
+								<b>Password:</b>	<input type="password" class="form-control"   v-model="userData.password" name="password" id="password"  placeholder=" your Password" required/>
 								</div>
 							</div>
 						</div>
-
-						
-
 						<div class="form-group ">
-                     
-    
-							<!-- <input type="Login" class="btn btn-info btn-lg btn-block login-button" @click.prevent="persist()"/> -->
              <input type="submit" class="btn btn-success btn-lg btn-block login-button" @click="persist"/>
              <div><b> create an account?</b> <router-link to="/" input type="sigin" class="btn btn-info btn-lg btn-block login-button" @click.prevent="sig()">Sign up here</router-link></div>
 	
 						</div>
  </fieldset>
-					
-
-<!-- </div> -->
-<!-- </div> -->
    </div>
    </form>
    </div>
@@ -73,7 +53,6 @@ export default {
       return{
         x:0,
     errors: [],
-    // count:'',
     userData:{ 
     name: '',
     password: '',
@@ -109,20 +88,13 @@ export default {
   var i=0;
   var error =  JSON.parse(localStorage.getItem('errors'))||[];
 error.forEach(x => {
-  // console.log(item.name);
-                  // console.log(this.userData.name)
            
                 if(x.name == this.userData.name && x.password == this.userData.password){
                   alert("already login");
-                  //  errors[0];
-                  //    errors[1];
                   this.$router.push({ name:'Dashboard'});
                    
                     i=1;
                 }
-                // else if(i==0){
-                //   alert("please signup first")
-                // }
           })
 
           if(i == 0){
@@ -135,30 +107,6 @@ error.forEach(x => {
             // }
               
         }
-
-  
-// errors.forEach(
-//     item => {
-//    if(item.name == this.name && item.age == this.password){
-//          this.count= "raja";
-
-//      }
-//  }
-
-//  if(this.count == "raja"){
-//       alert("already a member");
-//    this.$router.push({name:'Dashboard'});
-    
-//  }
-// else{
-//     alert("not");
-// }
-// errors[0];
-// errors[1];
-//  this.$router.push({name:'Dashboard'})
-
-  
-
 },
 
 }
@@ -172,9 +120,10 @@ template, html {
 fieldset{
   padding: 0 40px 40px 40px;
 }
- /* form{
+ /* form{  */
+     /* background: url("../assets/form.jpg"); */
 
-}  */
+ /* }    */
 
 /* * {
   /* box-sizing: border-box; */
@@ -189,9 +138,7 @@ fieldset{
   
 }
 .bg-img {
-  /* The image used */
-  background-image: url(https://static.pexels.com/photos/8819/warsaw.jpg);
-
+ background: url("../assets/login.jpg");
   min-height: 820px;
 
   /* Center and scale the image nicely */
@@ -204,7 +151,7 @@ fieldset{
 
 /* Add styles to the form container */
 .container {
-  
+  background: url("../assets/form.jpg");
   position: absolute;
   right: 210px;
   margin: 210px;
@@ -216,6 +163,12 @@ fieldset{
 }
 h2{
   color: blue;
+}
+b{
+  color:rgb(0, 128, 117);
+}
+i{
+  color: #00ff9d;
 }
 /* form{background-image: url('../assets/img.jpeg'); */
 /* } */

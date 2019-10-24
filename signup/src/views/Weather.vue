@@ -4,6 +4,8 @@
     <center>
     <!-- <b>City:</b> -->
     <!-- <input type="text" v-model="city" /> -->
+    <a href="https://icons8.com/icon/49461/partly-cloudy-day"></a>
+    <img src="https://img.icons8.com/nolan/96/000000/partly-cloudy-day.png">
     <router-link to="/Weather/day" button class="btn btn-success" @click="temp">Temp</router-link>
     <!-- <p>temp={{show}}</p> -->
     <div class="row">
@@ -73,8 +75,9 @@ p {
 }
 
 #day{ 
-/* background-image: url("../assets/weather.jpeg"); */
-background-image: linear-gradient(blue, yellow);
+  background-color: aquamarine;
+background-image: url("../assets/weather.jpeg");
+/* background-image:url(""); */
 }
 
 </style>

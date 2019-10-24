@@ -1,5 +1,5 @@
 <template>
-     <div>
+     <div id="div">
      <div class="container">
             <div class="my-5">
                 <form>
@@ -11,9 +11,6 @@
                                 <div class="input-group-append">
                                     <button @click="getData2"  class="btn btn-success" type="submit">Hour</button>
                                     <button @click="getData"  class="btn btn-success" type="submit">Day</button>
-
-
-                                     
                                 </div>
                             </div>
                         </div>
@@ -29,11 +26,7 @@
                 </div>
             </div>
         </div>
-      <!-- <h4>DAYS</h4>
-       <div class="container">
-          <div class="col"><highcharts :options="chartOptions"></highcharts></div>
-        
-      </div>  -->
+      
   </div> 
 </template>
 
@@ -153,54 +146,8 @@ export default {
               this.errored = true;
           })
           .finally(() => this.loading = false)
-      }
-  
-    //     return{
-    //         time: "hours",
-    //   chartOptions: {
-    //     chart: {
-    //       type: "column"
-    //     },
-    //     title: {
-    //       text: "Days"
-    //     },
-    //     xAxis: {
-    //       categories: [
-    //         "sun",
-    //         "Mon",
-    //         "Tue",
-    //         "Wed",
-    //         "Thu",
-    //         "Fri",
-    //         "Sat"
-            
-    //       ],
-    //       crosshair: true
-    //     },
-    //     yAxis: {
-    //       min: 0,
-    //       title: {
-    //         text: "Rain(mm)"
-    //       }
-    //     },
-    //     colors: ["blue"],
-    //     series: [
-    //       {
-    //         data: [
-    //           49.9,
-    //           71.5,
-    //           106.4,
-    //           129.2,
-    //           144.0,
-    //           176.0,
-    //           135.6
-              
-    //         ] 
-    //       }
-    //     ],
-    //   }
-    // }
-   , getData2: function() {
+      },
+    getData2: function() {
 
           this.loading = true;
 
@@ -234,7 +181,7 @@ export default {
                       datasets: [{
                           label: 'Avg. Temp',
                           backgroundColor: 'blue',
-                          borderColor: 'rgb(54, 162, 235)',
+                          borderColor: '#cc6d3e',
                           fill: false,
                           data: this.temps
                       }]
@@ -263,6 +210,7 @@ export default {
                               type: 'time',
                               time: {
                                   unit: 'hour',
+                                   borderColor: 'green',
                                   displayFormats: {
                                       hour: ' @ hA'
                                   },
@@ -276,6 +224,7 @@ export default {
                           yAxes: [{
                               scaleLabel: {
                                   display: true,
+                                   borderColor: '#cc6d3e',
                                   labelString: 'Temperature (°F)'
                               },
                               ticks: {
@@ -302,5 +251,11 @@ export default {
 
 </script>
 <style scoped>
+.container{
+    background: url("../assets/weather.jpeg");
+}
+h5{
+    color: brown;
+}
 
 </style>
